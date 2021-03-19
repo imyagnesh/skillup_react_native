@@ -1,0 +1,87 @@
+{
+  "collectionName": "components_recipe_recipes",
+  "info": {
+    "name": "recipe",
+    "icon": "mortar-pestle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "duration": {
+      "type": "integer",
+      "default": 7
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.steps"
+    },
+    "allowIndividual": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "cookingLevel": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Expert"
+      ],
+      "required": true,
+      "default": "Beginner"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "validity": {
+      "type": "integer"
+    },
+    "promoVideo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "ingredients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.ingredients"
+    },
+    "video": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categories": {
+      "collection": "categories"
+    },
+    "cuisine": {
+      "model": "cuisines"
+    }
+  }
+}

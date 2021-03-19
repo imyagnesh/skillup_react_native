@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_recipe_ingredients",
+  "info": {
+    "name": "ingredients",
+    "icon": "concierge-bell",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ingredient": {
+      "model": "ingredients"
+    },
+    "unit": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "string"
+    },
+    "isOptional": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "isApprox": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "forGarnishing": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

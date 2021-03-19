@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "orders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "usersID": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "course": {
+      "model": "courses"
+    },
+    "checkoutPaymentId": {
+      "type": "string"
+    },
+    "chekoutOrderId": {
+      "type": "string"
+    },
+    "checkoutOrderSignature": {
+      "type": "text"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "orderUniqueId": {
+      "type": "uid"
+    }
+  }
+}

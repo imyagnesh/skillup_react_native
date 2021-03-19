@@ -1,0 +1,12 @@
+HTTrack3.49-2 launched on Mon, 01 Feb 2021 14:40:38 at http://pxdraft.com/pxdemo/softon/index.html
+(httrack http://pxdraft.com/pxdemo/softon/index.html -O /Users/yagneshmodh/Documents/Projects/Templates/startup1 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:57:37	Error: 	"Not Found" (404) at link pxdraft.com/pxdemo/softon/static/vendor/owl-carousel/css/owl.video.play.png (from pxdraft.com/pxdemo/softon/static/vendor/owl-carousel/css/owl.carousel.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 16 minutes 59 seconds : 124 links scanned, 122 files written (22996340 bytes overall) [22296809 bytes received at 21881 bytes/sec], 848730 bytes transferred using HTTP compression in 27 files, ratio 12%, 2.1 requests per connection
+(1 errors, 0 warnings, 0 messages)

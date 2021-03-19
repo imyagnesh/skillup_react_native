@@ -1,0 +1,12 @@
+HTTrack3.49-2 launched on Thu, 04 Mar 2021 14:50:33 at https://www.pxdraft.com/themeforest/raino/
+(httrack https://www.pxdraft.com/themeforest/raino/ -O /Users/yagneshmodh/Documents/Projects/Templates/raino )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:54:09	Error: 	"Not Found" (404) at link https://www.pxdraft.com/themeforest/raino/static/plugin/owl-carousel/css/owl.video.play.png (from https://www.pxdraft.com/themeforest/raino/static/plugin/owl-carousel/css/owl.carousel.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 46 seconds : 224 links scanned, 222 files written (33143200 bytes overall) [31591791 bytes received at 139786 bytes/sec], 1846287 bytes transferred using HTTP compression in 53 files, ratio 12%, 8.0 requests per connection
+(1 errors, 0 warnings, 0 messages)

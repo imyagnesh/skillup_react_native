@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rattings",
+  "info": {
+    "name": "ratting"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "rattings"
+    },
+    "course": {
+      "via": "rattings",
+      "model": "courses"
+    },
+    "ratting": {
+      "type": "integer",
+      "max": 5,
+      "min": 1,
+      "default": 0
+    }
+  }
+}

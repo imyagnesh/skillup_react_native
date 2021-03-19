@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_recipe_combine_steps",
+  "info": {
+    "name": "combineSteps",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.steps"
+    },
+    "ingredients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.ingredients"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "cookingLevel": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Expert"
+      ]
+    },
+    "recipeImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "recipeVideo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "courseStartTime": {
+      "type": "time"
+    },
+    "isIndividual": {
+      "type": "component",
+      "repeatable": false,
+      "component": "recipe.individual"
+    },
+    "categories": {
+      "collection": "categories"
+    }
+  }
+}

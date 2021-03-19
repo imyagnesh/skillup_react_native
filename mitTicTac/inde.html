@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Game</title>
+    <style>
+      .flex {
+        display: flex;
+        flex: 1;
+      }
+      .box {
+        display: flex;
+        flex: 1;
+        color: white;
+        font-size: 4rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .boxHeight {
+        height: 5em;
+      }
+      .containerWidth {
+        width: 15em;
+      }
+      .bgBlue {
+        background-color: blue;
+      }
+
+      .bgRoyalBlue {
+        background-color: royalblue;
+      }
+
+      .fRed {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <h1 id="title"></h1>
+      <div class="containerWidth">
+        <div class="flex boxHeight">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="flex boxHeight">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="flex boxHeight">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const player1 = {
+        sign: "X",
+        Name: "Yagnesh",
+      };
+      const player2 = {
+        sign: "O",
+        Name: "Mitanshu",
+      };
+
+      const displayCurrentTurn = (data) => {
+        document.getElementById(
+          "title"
+        ).innerHTML = `Current Turn: ${data.Name}`;
+      };
+
+      const boxes = document.getElementsByClassName("box");
+
+      let currentTurn;
+      const randomNumer = Math.round(Math.random());
+      if (randomNumer) {
+        currentTurn = player1;
+      } else {
+        currentTurn = player2;
+      }
+      displayCurrentTurn(currentTurn);
+
+      const win = (index, cp) => {
+        let isWin = false;
+        // horizontal check
+        const basHVal = Math.floor(index / 3) * 3;
+        const hBoxex = [basHVal, basHVal + 1, basHVal + 2];
+        if (hBoxex.every((x) => boxes[x].innerHTML === cp.sign)) {
+          alert(`${cp.Name} Win`);
+          isWin = true;
+        }
+
+        // vertical check
+        const vBoxes = [index];
+        if (index - 3 < 0) {
+          vBoxes.push(index + 6);
+        } else {
+          vBoxes.push(index - 3);
+        }
+        if (index + 3 > 8) {
+          vBoxes.push(index - 6);
+        } else {
+          vBoxes.push(index + 3);
+        }
+        if (vBoxes.every((x) => boxes[x].innerHTML === cp.sign)) {
+          alert(`${cp.Name} Win`);
+          isWin = true;
+        }
+
+        // forward slant
+        if (index === 0 || index === 4 || index === 8) {
+          if ([0, 4, 8].every((x) => boxes[x].innerHTML === cp.sign)) {
+            alert(`${cp.Name} Win`);
+            isWin = true;
+          }
+        }
+
+        // forward slant
+        if (index === 2 || index === 4 || index === 6) {
+          if ([2, 4, 6].every((x) => boxes[x].innerHTML === cp.sign)) {
+            alert(`${cp.Name} Win`);
+            isWin = true;
+          }
+        }
+
+        return isWin;
+      };
+
+      for (let i = 0; i < boxes.length; i++) {
+        const box = boxes[i];
+        if (i % 2 === 0) {
+          box.classList.add("bgBlue");
+        } else {
+          box.classList.add("bgRoyalBlue");
+        }
+        box.addEventListener("click", () => {
+          if (box.innerHTML === "") {
+            box.innerHTML = currentTurn.sign;
+            if (!win(i, currentTurn)) {
+              if (currentTurn === player1) {
+                currentTurn = player2;
+              } else {
+                currentTurn = player1;
+              }
+              displayCurrentTurn(currentTurn);
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

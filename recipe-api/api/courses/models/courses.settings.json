@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "name": "courses",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
+    },
+    "validity": {
+      "type": "integer",
+      "default": 6
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "promoVideo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "cuisine": {
+      "model": "cuisines"
+    },
+    "promoVideoYoutubeId": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "like_event": {
+      "collection": "likes",
+      "via": "course"
+    },
+    "rattings": {
+      "collection": "ratting",
+      "via": "course"
+    },
+    "launchDate": {
+      "type": "datetime"
+    },
+    "recipes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.combine-steps"
+    },
+    "purchase_details": {
+      "collection": "purchase-details",
+      "via": "course"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "INR"
+      ],
+      "default": "INR",
+      "required": true
+    }
+  }
+}

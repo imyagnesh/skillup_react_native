@@ -527,8 +527,7 @@
             "items": {
               "required": [
                 "id",
-                "username",
-                "email"
+                "username"
               ],
               "properties": {
                 "id": {
@@ -560,6 +559,30 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "confirmationSMSToken": {
+                  "type": "integer"
+                },
+                "device_infos": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "likes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rattings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

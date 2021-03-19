@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  This is title  -->
+    <title>Issue Tracker</title>
+</head>
+<body>
+    <div>
+        <h1>Issue Tracker</h1>
+        <form id="issueForm">
+            <div>
+                <label for="issueTxt">Issue</label>
+                <input type="text" id="issueTxt">
+            </div>
+            <div>
+                <label for="severitySelect">Severity</label>
+                <select id="severitySelect">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div>
+                <label for="assignToInput">Assginged To</label>
+                <input type="text" id="assignToInput">
+            </div>
+            <button type="submit">Add</button>
+        </form>
+        <h1>Issue List</h1>
+    </div>
+</body>
+<script>
+    const issues =  [];
+    const issueForm = document.getElementById('issueForm');
+    issueForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const issue = document.getElementById('issueTxt').value;
+        const severity = document.getElementById('severitySelect').value;
+        const assignedTo = document.getElementById('assignToInput').value;
+        issues.push({
+            issue,
+            severity,
+            assignedTo
+        });
+        issueForm.reset();
+    });
+    console.log(issueForm)
+</script>
+</html>

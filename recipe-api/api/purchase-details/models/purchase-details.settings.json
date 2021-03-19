@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_details",
+  "info": {
+    "name": "purchaseDetails",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "receipt": {
+      "type": "uid"
+    },
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "course": {
+      "via": "purchase_details",
+      "model": "courses"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "razorpay_payment_id": {
+      "type": "string"
+    },
+    "razorpay_order_id": {
+      "type": "string"
+    },
+    "razorpay_signature": {
+      "type": "string"
+    },
+    "amount_paid": {
+      "type": "decimal",
+      "default": 0
+    },
+    "amount_due": {
+      "type": "decimal",
+      "default": 0
+    },
+    "offer_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "attempts": {
+      "type": "integer",
+      "default": 0
+    },
+    "notes": {
+      "type": "text"
+    },
+    "validity": {
+      "type": "integer"
+    },
+    "purchase_date": {
+      "type": "datetime"
+    },
+    "email": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "error": {
+      "type": "text"
+    },
+    "fail": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

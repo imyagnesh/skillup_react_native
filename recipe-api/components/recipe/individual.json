@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_recipe_individuals",
+  "info": {
+    "name": "individual",
+    "icon": "window-maximize",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "validity": {
+      "type": "integer",
+      "default": 7,
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_recipe_steps",
+  "info": {
+    "name": "steps",
+    "icon": "list"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

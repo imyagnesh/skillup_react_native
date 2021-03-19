@@ -1,0 +1,7 @@
+Mirror in progress since Mon, 01 Feb 2021 14:28:21 .. please wait!
+httrack http://pxdraft.com/pxdemo/softon/index.html -O /Users/yagneshmodh/Documents/Projects/Templates/startup 
+To pause the engine: create an empty file named 'hts-stop.lock'
+PID=18870
+UID=501
+GID=501
+START=1612169901

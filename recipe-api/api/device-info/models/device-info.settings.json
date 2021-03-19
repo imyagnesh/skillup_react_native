@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "device_infos",
+  "info": {
+    "name": "deviceInfo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "device_infos"
+    },
+    "OSName": {
+      "type": "string"
+    },
+    "OSVersion": {
+      "type": "string"
+    },
+    "appVersion": {
+      "type": "string"
+    },
+    "buildId": {
+      "type": "string"
+    },
+    "buildNumber": {
+      "type": "string"
+    },
+    "carrier": {
+      "type": "string"
+    },
+    "deviceId": {
+      "type": "string"
+    },
+    "deviceType": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "uniqueId": {
+      "type": "string"
+    },
+    "firebaseToken": {
+      "type": "text"
+    }
+  }
+}
